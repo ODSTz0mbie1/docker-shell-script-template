@@ -37,6 +37,8 @@ source ~/.bash_profile
 To run the script with a specific directory:
 
 ```sh
+testscript -d /path/to/directory
+OR
 testscript --directory /path/to/directory
 ```
 

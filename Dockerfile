@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY *.py .
 
 # Command to run your app
-CMD ["python", "main.py"]
+ENTRYPOINT ["python", "main.py"]
