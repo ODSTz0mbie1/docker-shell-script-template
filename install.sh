@@ -4,7 +4,7 @@
 docker build -t script1 . || { echo "Docker build failed"; exit 1; }
 
 # Define the alias string
-ALIAS="alias testscript='docker run -v .:/app/data script1'"
+ALIAS="alias testscript='docker run --rm -v .:/app/data script1'"
 
 # Check if the alias already exists in the current session
 if alias testscript >/dev/null 2>&1; then
