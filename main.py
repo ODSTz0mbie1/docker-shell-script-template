@@ -13,4 +13,10 @@ def main():
     print(f"Processing directory: {current_directory}")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        exit(1)
+    finally:
+        print("Script finished.")
