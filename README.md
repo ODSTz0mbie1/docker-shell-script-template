@@ -1,24 +1,30 @@
 # Bash Script Template
 
-This repository contains a template for a Python script that uses `argparse` for command-line argument parsing.
+This repository contains a template for a Python script that uses `argparse` for command-line argument parsing. The application is a functional template, so the code is runnable but doesn't achieve anything in particular.
 
 ## How to Use `argparse`
 
 The `argparse` module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and `argparse` will figure out how to parse those out of `sys.argv`.
 
+## Docker Application
+
+This template is designed to run inside a Docker container. Follow the instructions below to build and run the Docker container.
+
+### Requirements
+
+- Docker installed on your machine.
+
 ### Installing the Alias
 
-You can use the provided `install.sh` script to create an alias for running the script more easily.
+You can use the provided `install.sh` script to build the Docker image and create an alias for running the script more easily.
 
 ```sh
+chmod +x install.sh
+
 ./install.sh
 ```
 
-This will add an alias to your `~/.bash_profile` so you can run the script using the `pytest` command:
-
-```sh
-pytest --directory /path/to/directory
-```
+This will build the Docker image and add an alias to your `~/.bash_profile` so you can run the script using the `testscript` command.
 
 Make sure to reload your profile to apply the changes:
 
@@ -31,23 +37,11 @@ source ~/.bash_profile
 To run the script with a specific directory:
 
 ```sh
-python3 main.py --directory /path/to/directory
+testscript --directory /path/to/directory
 ```
 
 If no directory is specified, the script will use the current working directory by default.
 
 ```sh
-python3 main.py
-```
-
-To run the script using the alias:
-
-```sh
-pytest --directory /path/to/directory
-```
-
-If no directory is specified, the script will use the current working directory by default.
-
-```sh
-pytest
+testscript
 ```

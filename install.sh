@@ -1,12 +1,26 @@
 #!/bin/bash
 
-docker build -t script1 .
+# Build the Docker image
+docker build -t script1 . || { echo "Docker build failed"; exit 1; }
 
-ALIAS="testscript='docker run -v $(pwd):/app/data -w /app/data script1'"
-if bash -c "alias" | grep "$ALIAS"; then
-    echo "Alias already exists"
-    source ~/.bash_profile
-    exit 1
+# Define the alias string
+echo .
+ALIAS="alias testscript='docker run -v .:/app/data script1'"
+
+# Check if the alias already exists in the current session
+if alias testscript >/dev/null 2>&1; then
+    echo "Alias 'testscript' already exists in the current session."
+    exit 1  # Or exit 0 if this isn’t an error
 fi
-echo "alias $ALIAS" >> ~/.bash_profile
+
+# Check if the alias is already in ~/.bash_profile to avoid duplicates
+if ! grep -q "alias testscript=" ~/.bash_profile; then
+    echo "$ALIAS" >> ~/.bash_profile
+    echo "Added alias to ~/.bash_profile."
+else
+    echo "Alias 'testscript' already exists in ~/.bash_profile."
+fi
+
+# Source the profile to apply the alias to the current session
 source ~/.bash_profile
+echo "Alias 'testscript' is now available."
