@@ -2,6 +2,7 @@
 
 import os
 import argparse
+import pandas as pd
 
 def main():
     # argparse is a module for parsing command-line arguments.
@@ -10,7 +11,15 @@ def main():
     parser.add_argument('-d', '--directory', type=str, help='Directory to process', default=os.getcwd())
     args = parser.parse_args()
     current_directory = args.directory
-    print(f"Processing directory: {current_directory}")
+    print(os.listdir(current_directory))
+    df = pd.DataFrame()
+    df['A'] = [1, 2, 3]
+    df['B'] = [4, 5, 6]
+    df['C'] = [7, 8, 9]
+    df.to_csv(os.path.join(current_directory, "output.csv"), index=False)
+    print("Dataframe saved to output.csv")
+    print(os.listdir(current_directory))
+
 
 if __name__ == "__main__":
     try:
