@@ -13,7 +13,7 @@ try {
 }
 
 # Define the alias string
-$alias = "docker run --rm -v .:/app/data script1"
+$alias = "docker run --rm -v /:/app/data script1 -d $(pwd).Substring(3)"
 
 # Add the alias to the user's PowerShell profile
 $profilePath = $PROFILE.CurrentUserAllHosts

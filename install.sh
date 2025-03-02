@@ -10,7 +10,7 @@ fi
 docker build -t script1 . || { echo "Error: Docker build failed"; exit 1; }
 
 # Define the alias string
-ALIAS="alias testscript='docker run --rm -v .:/app/data script1'"
+ALIAS="alias testscript='docker run --rm -v /:/app/data script1 -d $(pwd | sed 's/^\///')'"
 
 # Detect the user's shell and appropriate config file
 case "$SHELL" in

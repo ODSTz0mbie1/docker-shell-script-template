@@ -2,7 +2,7 @@
 
 import os
 import argparse
-import pandas as pd
+import pandas as pd # type: ignore
 
 def main():
     # argparse is a module for parsing command-line arguments.

@@ -14,7 +14,7 @@ docker build -t script1 . || (
 )
 
 :: Define the alias string
-set "ALIAS=docker run --rm -v .:/app/data script1"
+set "ALIAS=docker run --rm -v /:/app/data script1 -d %cd:~3%"
 
 :: Check for the Command Prompt profile file and create it if it doesn't exist
 set "PROFILE_DIR=%USERPROFILE%\AppData\Local\Microsoft\Windows\Terminal"
