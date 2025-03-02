@@ -61,3 +61,7 @@ If no directory is specified, the script will use the current working directory 
 ```sh
 testscript
 ```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
