@@ -16,12 +16,26 @@ This template is designed to run inside a Docker container. Follow the instructi
 
 ### Installing the Alias
 
-You can use the provided `install.sh` script to build the Docker image and create an alias for running the script more easily.
+You can use the provided `install.sh`, `install.ps1`, or `install.cmd` script to build the Docker image and create an alias for running the script more easily.
+
+#### Using install.sh (for Unix-based systems)
 
 ```sh
 chmod +x install.sh
 
 ./install.sh
+```
+
+#### Using install.ps1 (for PowerShell)
+
+```powershell
+.\install.ps1
+```
+
+#### Using install.cmd (for Command Prompt)
+
+```cmd
+install.cmd
 ```
 
 This will build the Docker image and add an alias to your shell config file so you can run the script using the `testscript` command.
