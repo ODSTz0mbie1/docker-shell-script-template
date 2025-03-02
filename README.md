@@ -1,4 +1,4 @@
-# Bash Script Template
+# Shell Command Template
 
 This repository contains a template for a Python script that uses `argparse` for command-line argument parsing. The application is a functional template, so the code is runnable but doesn't achieve anything in particular.
 
@@ -24,12 +24,12 @@ chmod +x install.sh
 ./install.sh
 ```
 
-This will build the Docker image and add an alias to your `~/.bash_profile` so you can run the script using the `testscript` command.
+This will build the Docker image and add an alias to your shell config file so you can run the script using the `testscript` command.
 
 Make sure to reload your profile to apply the changes:
 
 ```sh
-source ~/.bash_profile
+source ~/.bash_profile  # or source ~/.bashrc, source ~/.zshrc depending on your shell
 ```
 
 ### Running the Script
